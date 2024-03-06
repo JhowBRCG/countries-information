@@ -34,3 +34,35 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+console.log(selectedRegion)
+
+const customStyles = {
+control: (defaultStyles) => ({
+...defaultStyles,
+backgroundColor: 'hsl(209, 23%, 22%)',
+padding: '.5rem',
+}),
+
+    option: (defaultStyles) => ({
+      ...defaultStyles,
+      backgroundColor: 'hsl(209, 23%, 22%)',
+      color: 'white',
+    }),
+
+}
+
+const handleOnChange = (selectedOption) => {
+setSelectedRegion(selectedOption.value)
+}
+
+return (
+<div className="max-w-56">
+<Select
+        options={options}
+        onChange={handleOnChange}
+        placeholder="Filter by Region"
+        styles={customStyles}
+      />
+</div>
+)
