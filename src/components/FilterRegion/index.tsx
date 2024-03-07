@@ -26,7 +26,7 @@ export const FilterRegion = () => {
     <div className="relative w-full">
       <div
         onClick={dropDownToggle}
-        className="shadow-primary flex cursor-pointer items-center rounded-md bg-white p-4 dark:bg-dark-theme-600 dark:text-white"
+        className="flex cursor-pointer items-center rounded-md bg-white p-4 shadow-primary dark:bg-dark-theme-600 dark:text-white"
       >
         <p className="flex-1 font-semibold">
           {selectedRegion
@@ -34,9 +34,9 @@ export const FilterRegion = () => {
             : 'Filter by Region'}
         </p>
         {isDropDownOpen ? (
-          <FaAngleDown className="dark:text-white" />
-        ) : (
           <FaAngleUp className="dark:text-white" />
+        ) : (
+          <FaAngleDown className="dark:text-white" />
         )}
       </div>
       {isDropDownOpen && (
