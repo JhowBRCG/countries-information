@@ -14,13 +14,13 @@ export const FilterCountry = () => {
   }
 
   return (
-    <div className="shadow-primary overflow-hidden rounded-md">
+    <div className="overflow-hidden rounded-md shadow-primary">
       <div className="relative overflow-hidden">
         <FaSearch className="absolute inset-0 mb-auto ml-7 mt-auto text-lg text-light-mode-input dark:text-white" />
         <input
           className="w-full rounded-md py-4 indent-20 placeholder:text-light-mode-input dark:bg-dark-theme-600 dark:text-white placeholder:dark:text-white"
           type="text"
-          placeholder="Search for a countrie..."
+          placeholder="Search for a country..."
           onChange={handleOnChange}
           value={tempQuery}
           name="filter-country"
