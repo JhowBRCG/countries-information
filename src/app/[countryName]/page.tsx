@@ -2,12 +2,23 @@ import { BackButton } from '@/components/BackButton'
 import { BorderCountry } from '@/components/BorderCountry'
 import { getCountry } from '@/lib/services/getCountry'
 import { getCountryByCodeRegion } from '@/lib/services/getCountryByCodeRegion'
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 type Props = {
   params: {
     countryName: string
+  }
+}
+
+export const generateMetadata = async ({
+  params,
+}: Props): Promise<Metadata> => {
+  const country = await getCountry(params.countryName)
+  return {
+    title: `${country[0].name.common}`,
+    description: `${country[0].name.common} is a country that resides in the ${country[0].region}. Its capital is ${country[0].capital.length > 0 ? country[0].capital : 'none'}, and the population of the country is approximately ${country[0].population.toLocaleString('en-Us')}`,
   }
 }
 
@@ -62,7 +73,7 @@ export default async function CountryDetails({ params }: Props) {
       <BackButton />
       <div className="justify-between lg:flex lg:items-center lg:gap-16">
         <Image
-          className="shadow-primary object-contain"
+          className="object-contain shadow-primary"
           width={600}
           height={600}
           src={countryData[0].flags.png}
