@@ -19,7 +19,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body className={nunitoSans.className}>
         <Header />
         <div className="m-auto max-w-[1440px] px-5 pb-5 pt-7 lg:pt-14">
