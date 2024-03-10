@@ -16,14 +16,13 @@ export const CountryCard = ({ country }: CountryCardProps) => {
 
   return (
     <article className="overflow-hidden rounded-md bg-white shadow-primary transition-transform hover:-translate-y-5 dark:bg-dark-theme-600">
-      <div className="relative h-[199px] w-full">
+      <div className="w-full">
         <Image
-          className="object-cover"
+          className="aspect-[18/11] w-full"
           src={png}
           alt={alt ? alt : common}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          fill
-          priority
+          width={264}
+          height={500}
         />
       </div>
       <div className="p-8">
